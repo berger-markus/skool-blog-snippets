@@ -14,25 +14,26 @@
       display: inline-flex;
       align-items: center;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin-bottom: 20px;  /* Space between widget and button */
+      margin-bottom: 12px;
+      transform: scale(0.85);  /* Make the entire widget smaller */
     }
 
     .live-indicator {
       background-color: #E74C3C;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 10px;  /* Reduced padding */
       border-radius: 4px;
       display: flex;
       align-items: center;
-      margin-right: 8px;
+      margin-right: 6px;  /* Reduced margin */
     }
 
     .live-dot {
-      width: 8px;
-      height: 8px;
+      width: 6px;  /* Smaller dot */
+      height: 6px;
       background-color: white;
       border-radius: 50%;
-      margin-right: 8px;
+      margin-right: 6px;  /* Reduced margin */
       animation: pulse 1.5s ease-in-out infinite;
     }
 
@@ -53,12 +54,12 @@
 
     .live-text {
       font-weight: 600;
-      font-size: 14px;
+      font-size: 12px;  /* Smaller font */
     }
 
     .happening-text {
       color: #2C3E50;
-      font-size: 16px;
+      font-size: 14px;  /* Smaller font */
     }
     
     /* Container for both components */
