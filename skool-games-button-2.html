@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,55 +8,8 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      display: flex;
-      align-items: center;
     }
     
-    .container {
-      position: relative;
-      text-align: center;
-    }
-
-    .live-indicator {
-      position: absolute;
-      top: -30px; /* Adjusts space between the button */
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background-color: #d9534f;
-      color: #fff;
-      padding: 6px 14px;
-      border-radius: 16px;
-      font-size: 14px;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .live-dot {
-      width: 10px;
-      height: 10px;
-      background-color: #fff;
-      border-radius: 50%;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: scale(1.5);
-        opacity: 0.6;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
     .button {
       width: 100%;
       background-color: #f2d07b;
@@ -69,11 +23,12 @@
       cursor: pointer;
       transition: background-color 0.2s ease;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 24px;
-      position: relative;
     }
     
     .main-content {
@@ -122,6 +77,32 @@
       background-color: #e6bc5f;
     }
     
+    .button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 80px;
+      height: 200%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(35deg);
+      animation: shimmer 4s infinite linear;
+    }
+    
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-200%) rotate(35deg);
+      }
+      100% {
+        transform: translateX(1500%) rotate(35deg);
+      }
+    }
+    
     @media (max-width: 600px) {
       .button {
         font-size: 14px;
@@ -131,33 +112,23 @@
       .players-count {
         font-size: 12px;
       }
-      .live-indicator {
-        font-size: 12px;
-        padding: 4px 10px;
-        top: -25px;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="live-indicator">
-      <div class="live-dot"></div>
-      LIVE Happening now
-    </div>
-    <button class="button">
-      <div class="main-content">
-        <img src="skool-flame.png" alt="Skool flame icon" class="flame-icon" />
-        <div class="button-content">
-          <div>SKOOL GAMES - PLAY FOR FREE!</div>
-          <div class="players-count">
-            <div class="player-icon"></div>
-            227 players online
-          </div>
+  <button class="button">
+    <div class="main-content">
+      <img src="skool-flame.png" alt="Skool flame icon" class="flame-icon" />
+      <div class="button-content">
+        <div>SKOOL GAMES - PLAY FOR FREE!</div>
+        <div class="players-count">
+          <div class="player-icon"></div>
+          227 players online
         </div>
       </div>
-      <img src="hormozi_head.webp" alt="Profile image" class="right-image" />
-    </button>
-  </div>
+    </div>
+    <img src="hormozi_head.webp" alt="Profile image" class="right-image" />
+  </button>
 </body>
 </html>
+
