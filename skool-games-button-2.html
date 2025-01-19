@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +8,68 @@
       width: 100%;
       height: 100%;
     }
+
+    /* Live Widget Styles */
+    .live-container {
+      display: inline-flex;
+      align-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin-bottom: 20px;  /* Space between widget and button */
+    }
+
+    .live-indicator {
+      background-color: #E74C3C;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      margin-right: 8px;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background-color: white;
+      border-radius: 50%;
+      margin-right: 8px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .live-text {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .happening-text {
+      color: #2C3E50;
+      font-size: 16px;
+    }
     
+    /* Container for both components */
+    .components-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Button Styles */
     .button {
       width: 100%;
       background-color: #f2d07b;
@@ -116,19 +176,28 @@
   </style>
 </head>
 <body>
-  <button class="button">
-    <div class="main-content">
-      <img src="skool-flame.png" alt="Skool flame icon" class="flame-icon" />
-      <div class="button-content">
-        <div>SKOOL GAMES - PLAY FOR FREE!</div>
-        <div class="players-count">
-          <div class="player-icon"></div>
-          227 players online
+  <div class="components-container">
+    <div class="live-container">
+      <div class="live-indicator">
+        <div class="live-dot"></div>
+        <span class="live-text">LIVE</span>
+      </div>
+      <span class="happening-text">Happening now</span>
+    </div>
+
+    <button class="button">
+      <div class="main-content">
+        <img src="skool-flame.png" alt="Skool flame icon" class="flame-icon" />
+        <div class="button-content">
+          <div>SKOOL GAMES - PLAY FOR FREE!</div>
+          <div class="players-count">
+            <div class="player-icon"></div>
+            227 players online
+          </div>
         </div>
       </div>
-    </div>
-    <img src="hormozi_head.webp" alt="Profile image" class="right-image" />
-  </button>
+      <img src="hormozi_head.webp" alt="Profile image" class="right-image" />
+    </button>
+  </div>
 </body>
 </html>
-
