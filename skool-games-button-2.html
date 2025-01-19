@@ -9,31 +9,30 @@
       height: 100%;
     }
 
-    /* Live Widget Styles */
     .live-container {
       display: inline-flex;
       align-items: center;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin-bottom: 12px;
-      transform: scale(0.85);  /* Make the entire widget smaller */
+      transform: scale(0.85);
     }
 
     .live-indicator {
       background-color: #E74C3C;
       color: white;
-      padding: 4px 10px;  /* Reduced padding */
+      padding: 4px 10px;
       border-radius: 4px;
       display: flex;
       align-items: center;
-      margin-right: 6px;  /* Reduced margin */
+      margin-right: 6px;
     }
 
     .live-dot {
-      width: 6px;  /* Smaller dot */
+      width: 6px;
       height: 6px;
       background-color: white;
       border-radius: 50%;
-      margin-right: 6px;  /* Reduced margin */
+      margin-right: 6px;
       animation: pulse 1.5s ease-in-out infinite;
     }
 
@@ -54,23 +53,21 @@
 
     .live-text {
       font-weight: 600;
-      font-size: 12px;  /* Smaller font */
+      font-size: 12px;
     }
 
     .happening-text {
       color: #2C3E50;
-      font-size: 14px;  /* Smaller font */
+      font-size: 14px;
     }
     
-    /* Container for both components */
     .components-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0;  /* Changed from padding: 20px 0; to remove top space */
+      padding: 0;
     }
 
-    /* Button Styles */
     .button {
       width: 100%;
       background-color: #f2d07b;
@@ -188,17 +185,28 @@
 
     <button class="button">
       <div class="main-content">
-        <img src="skool-flame.png" alt="Skool flame icon" class="flame-icon" />
+        <img src="/api/placeholder/30/30" alt="Skool flame icon" class="flame-icon" />
         <div class="button-content">
           <div>SKOOL GAMES - PLAY FOR FREE!</div>
           <div class="players-count">
             <div class="player-icon"></div>
-            227 players online
+            <span id="player-count">227</span> players online
           </div>
         </div>
       </div>
-      <img src="hormozi_head.webp" alt="Profile image" class="right-image" />
+      <img src="/api/placeholder/40/40" alt="Profile image" class="right-image" />
     </button>
   </div>
+
+  <script>
+    function updatePlayerCount() {
+      const count = Math.floor(Math.random() * (300 - 251 + 1)) + 251;
+      document.getElementById('player-count').textContent = count;
+    }
+
+    // Update initially and then every 15 seconds
+    updatePlayerCount();
+    setInterval(updatePlayerCount, 15000);
+  </script>
 </body>
 </html>
