@@ -2,8 +2,7 @@
 <html>
 <head>
   <style>
-    
-  html, body {
+    html, body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -27,19 +26,23 @@
       overflow: hidden;
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 12px;
     }
-
+    
     .button-content {
       display: flex;
       flex-direction: column;
-      align-items: center;
       line-height: 1.2;
     }
-
+    
+    .title-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 3px;
+    }
+    
     .players-count {
-      padding-top: 3px;
       font-size: 14px;
       font-weight: 500;
       opacity: 0.9;
@@ -47,24 +50,31 @@
       align-items: center;
       gap: 4px;
     }
-
+    
     .player-icon {
       width: 10px;
       height: 10px;
       background-color: #55a665;
       border-radius: 50%;
     }
-
-    .button img {
+    
+    .flame-icon {
       width: 30px;
       height: 30px;
       object-fit: contain;
     }
-
+    
+    .right-image {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
     .button:hover {
       background-color: #e6bc5f;
     }
-
+    
     .button::after {
       content: '';
       position: absolute;
@@ -81,7 +91,7 @@
       transform: rotate(35deg);
       animation: shimmer 4s infinite linear;
     }
-
+    
     @keyframes shimmer {
       0% {
         transform: translateX(-200%) rotate(35deg);
@@ -90,7 +100,7 @@
         transform: translateX(1500%) rotate(35deg);
       }
     }
-
+    
     @media (max-width: 600px) {
       .button {
         font-size: 14px;
@@ -99,17 +109,26 @@
       .players-count {
         font-size: 12px;
       }
+      .right-image {
+        width: 24px;
+        height: 24px;
+      }
     }
   </style>
 </head>
-<button class="button">
-  <img src="skool-flame.png" alt="Skool flame icon" />
-  <div class="button-content">
-    <div>SKOOL GAMES - PLAY FOR FREE!</div>
-    <div class="players-count">
-      <div class="player-icon"></div>
-      227 players online
+<body>
+  <button class="button">
+    <img src="skool-flame.png" alt="Skool flame icon" class="flame-icon" />
+    <div class="button-content">
+      <div class="title-container">
+        <div>SKOOL GAMES - PLAY FOR FREE!</div>
+        <img src="/api/placeholder/30/30" alt="Profile image" class="right-image" />
+      </div>
+      <div class="players-count">
+        <div class="player-icon"></div>
+        227 players online
+      </div>
     </div>
-  </div>
-</button>
+  </button>
+</body>
 </html>
