@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .components-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3px;
+    }
+
+    .button {
+      width: 100%;
+      background-color: #3B82F6;
+      color: white;
+      padding: 8px 24px;
+      height: 60px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    .main-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .button-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .testimonial-prompt {
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.9;
+      margin-top: 3px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .message-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .message-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .button:hover {
+      background-color: #2563EB;
+      animation: none;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      50% {
+        transform: scale(1.02);
+        box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .button {
+        font-size: 14px;
+        padding: 12px 10px;
+        gap: 16px;
+      }
+      .testimonial-prompt {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="components-container">
+    <button class="button">
+      <div class="main-content">
+        <div class="message-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <path d="M3 9h18"></path>
+            <path d="M9 21v-6"></path>
+          </svg>
+        </div>
+        <div class="button-content">
+          <div>Member of This Community?</div>
+          <div class="testimonial-prompt">
+            Share Your Testimonial Today!
+          </div>
+        </div>
+      </div>
+    </button>
+  </div>
+</body>
+</html>
